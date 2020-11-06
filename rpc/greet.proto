@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package greet;
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+
+message SayRequest {
+  string ping = 1;
+}
+
+message SayResponse {
+  string pong = 1;
+}
+
+service Greet {
+  rpc Ping(Request) returns(Response);
+  rpc SayHello(SayRequest) returns(SayResponse);
+}
